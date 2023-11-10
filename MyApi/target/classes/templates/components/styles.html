@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<style th:fragment="mail-style">
+    /* Template maquetation */
+    :root {
+        color: #000;
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        font-size: 16px;
+        /*font things*/
+    }
+
+    body,
+    td {
+        margin: 0;
+        padding: 0;
+    }
+
+    table,
+    tr,
+    td {
+        border-spacing: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color:#8E7394 !important;
+    }
+
+    input,
+    textarea {
+        border: none;
+        outline: none;
+        padding: .4em;
+        color: black;
+        background: inherit;
+
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    audio {
+        height: 15px;
+    }
+
+    /* Colors */
+    .primary {
+        background-color:#F0F0F0;
+    }
+    .secondary {
+        background-color:#AFE0D0;
+    }
+    .secondary-darker {
+        background-color:#56947F;
+    }
+    .tertiary {
+        background-color:#DBC4E0;
+    }
+    .tertiary-darker {
+        background-color:#8E7394;
+    }
+
+    /* Specific things */
+    .flapL,
+    .flapR {
+        border-bottom: 0;
+    }
+
+    .flapL {
+        border-right: 0;
+    }
+
+    .flapR {
+        border-left: 0;
+    }
+
+    .card {
+        height: 30vh;
+        width: 80%;
+        vertical-align: top;
+        border-top-right-radius: 25px;
+    }
+
+    .card table td * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .card table td h4 {
+        padding-left: 1em;
+    }
+
+    .card>table>tbody>tr>td>form>table>tbody>tr>td>table {
+        padding: 0 2em;
+    }
+
+    .card table td h3,
+    .card table td button {
+        margin: 1em;
+    }
+
+    .card table td button {
+        font-size: 16px;
+        padding: 0.5em;
+        color: #8FA37E;
+        border: 1px outset;
+        border-radius: 50%;
+    }
+
+    /*.card table td button {
+        border-color: #B92CF0;
+        background: #B92CF0;
+    }*/
+
+    .envelope {
+        height: 35vh;
+    }
+
+    tr>.envelope {
+        border-top: 0;
+    }
+
+    .envelope td {
+        background: #AFE0D0;
+    }
+
+    .envelope>table>tbody>tr>td.neck {
+        background-color: #F0F0F0;
+    }
+
+    .neckL {
+        border-top-right-radius: 50%;
+    }
+
+    .neckR {
+        border-top-left-radius: 50%;
+    }
+
+    .neckM {
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+
+
+    /* classes */
+    .w-50 {
+        width: 50%;
+    }
+
+    .w-80 {
+        width: 80%;
+    }
+
+    .w-100 {
+        width: 100%;
+    }
+
+    .h-100 {
+        height: 100%;
+    }
+
+    .generated {
+        color: #000;
+    }
+
+    .inText {
+        appearance: none;
+        border-bottom: .2em solid gainsboro;
+        border-radius: .2em .2em 0 0;
+
+    }
+
+    .inNumber {
+        appearance: none;
+        border-bottom: .2em solid gainsboro;
+        border-radius: .2em .2em 0 0;
+        width: 2.5em;
+    }
+
+    .inDate {
+        position: absolute;
+        width: 16px;
+    }
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .left {
+        text-align: left;
+    }
+
+    .right {
+        text-align: right;
+    }
+
+    .inline {
+        display: inline-block;
+    }
+
+    .tbody {
+        width: 100%;
+        display: table;
+    }
+
+    .title {
+        /* juntar con logo */
+        vertical-align: top;
+    }
+
+    /* ToDo: choose one logo type (can be id?): */
+    img.logo {
+        width: 10%;
+        height: 2.5em;
+    }
+
+    h1.logo {
+        height: 40px;
+        margin: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+        .w-80 {
+            width: 90%;
+        }
+    }
+</style>
+
+</html>
