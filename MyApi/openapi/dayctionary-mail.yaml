@@ -1,0 +1,57 @@
+# Every Open API file needs this
+swagger: "2.0"
+# Document metadata
+info:
+  version: "2023-10-10"
+  title: Dayctionary-mails
+  description: Api de los mails.
+# URL data
+host: localhost:8888
+basePath: /mails
+schemes:
+  - http
+consumes:
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+
+paths:
+  /verify/{mail}:
+    #http://localhost:8888/mails/forgot/mail@gmail.com
+    get:
+      parameters:
+          - name: mail
+            in: path
+            required: true
+            type: string
+            description: mail cuya autoría se quiere validar.
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/verifyCodeDTO"
+      description: envía un mensaje al email introducido con un código generado aleatoriamente.
+  /forgot/{mail}:
+    #http://localhost:8888/mails/forgot/mail@gmail.com
+    get:
+      parameters:
+          - name: mail
+            in: path
+            required: true
+            type: string
+            description: mail del usuario que ha olvidado su contraseña.
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: "boolean"
+        404:
+          description: Not found. Usuario no encontrado.
+      description: cambia la contraseña de un usuario por una generada aleatoriamente y envía la contraseña al email introducido.
+definitions:
+  verifyCodeDTO:
+    properties:
+      code:
+        type: string
+        description: Código aleatoriamente generado.
+

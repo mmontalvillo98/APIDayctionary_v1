@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <!--EMPTY ROW OF X CELLS-->
+    <tr th:fragment="row-of(cells)">
+        <td th:each="cell: ${cells}">
+            &nbsp;
+        </td>
+    </tr>
+</body>
+
+</html>
