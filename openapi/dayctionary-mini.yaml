@@ -1,0 +1,160 @@
+# Every Open API file needs this
+swagger: "2.0"
+# Document metadata
+info:
+  version: "2023-10-10"
+  title: Dayctionary-minis
+  description: Api de los minijuegos.
+# URL data
+host: localhost:8888
+basePath: /mini
+schemes:
+  - http
+consumes:
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+
+paths:
+  /phonetics:
+    #http://localhost:8888/mini/phonetics
+    get:
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/phonetics"
+        404:
+          description: Not found. Juego no encontrado.
+      description: Recibe la lista de fonéticas de hoy.
+  /definitions:
+    #http://localhost:8888/definitions/phonetics
+    get:
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/definitions"
+        404:
+          description: Not found. Juego no encontrado.
+      description: Recibe la lista de definiciones de hoy.
+  /synonyms:
+    #http://localhost:8888/mini/synonyms
+    get:
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/synonyms"
+        404:
+          description: Not found. Juego no encontrado.
+      description: Recibe la lista de sinónimos de hoy.
+  /phonetics/{date}:
+    #http://localhost:8888/mini/phonetics/20231010
+    get:
+      parameters:
+          - name: date
+            in: path
+            required: true
+            type: string
+            description: Fecha del juego con formato YYYYMMDD.
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/phonetics"
+        400:
+          description: Bad request. La fecha no tiene el formato indicado.
+        404:
+          description: Not found. Juego no encontrado.
+      description: Recibe la lista de fonéticas del día indicado.
+  /definitions/{date}:
+    #http://localhost:8888/mini/definitions/20231010
+    get:
+      parameters:
+          - name: date
+            in: path
+            required: true
+            type: string
+            description: Fecha del juego con formato YYYYMMDD.
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/definitions"
+        400:
+          description: Bad request. La fecha no tiene el formato indicado.
+        404:
+          description: Not found. Juego no encontrado.
+      description: Recibe la lista de definiciones del día indicado.
+  /synonyms/{date}:
+    #http://localhost:8888/mini/synonyms/20231010
+    get:
+      parameters:
+          - name: date
+            in: path
+            required: true
+            type: string
+            description: Fecha del juego con formato YYYYMMDD.
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/synonyms"
+        400:
+          description: Bad request. La fecha no tiene el formato indicado.
+        404:
+          description: Not found. Juego no encontrado.
+      description: Recibe la lista de sinónimos del día indicado.
+definitions:
+  phonetic:
+    properties:
+      audio:
+        type: string
+        description: Audio de la palabras.
+      syllables:
+        type: integer
+        description: Número de sílabas de la palabras.
+        minimum: 1
+  phoneticSingle:
+    properties:
+      word:
+        type: string
+        description: Palabra a la que pertenece la fonética.
+      phonetic:
+        $ref: "#/definitions/phonetic"
+  phonetics:
+    type: array
+    items:
+      $ref: "#/definitions/phoneticSingle"
+  definition:
+    properties:
+      text:
+        type: string
+        description: Definición de la palabra.
+      type:
+        type: string
+        description: Tipo de palabra.
+  definitionSingle:
+    properties:
+      word:
+        type: string
+        description: Palabra a la que pertenece la definición.
+      definition:
+        $ref: "#/definitions/definition"
+  definitions:
+    type: array
+    items:
+      $ref: "#/definitions/definitionSingle"
+  synonymSingle:
+    properties:
+      word:
+        type: string
+        description: Palabra a la que pertenece la definición.
+      synonym:
+        type: string
+        description: Sinónimo.
+  synonyms:
+    type: array
+    items:
+      $ref: "#/definitions/synonymSingle"

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <!--MAIN TABLE-->
+    <table th:fragment="mail-main-table(body)" class="w-100">
+        <tbody>
+            <tr>
+                <td th:replace="~{components/cells :: main-header}"></td>
+            </tr>
+            <tr>
+                <td>
+                    <table th:replace="~{components/tables :: mail-content-table(${body})}"></table>
+                </td>
+            </tr>
+            <tr>
+                <td th:replace="~{components/cells :: main-footer}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <!--CONTENT TABLE-->
+    <table th:fragment="mail-content-table(body)" class="w-80 center">
+        <tbody class="tbody">
+            <tr>
+                <td>&nbsp;</td>
+                <td class="card primary" rowspan="3">
+                    <table th:replace="~{components/tables :: card(${body})}"></table>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr th:replace="~{components/rows :: row-of(2)}"></tr>
+            <tr>
+                <td class="flapL secondary-darker">&nbsp;</td>
+                <td class="flapR secondary-darker">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="envelope secondary" colspan="3">
+                    <table th:replace="~{components/tables :: envelope}"></table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--CARD-->
+    <table th:fragment="card(body)" class="w-100 h-100">
+        <tbody>
+            <tr>
+                <td th:replace="~{components/cells :: card-title}"></td>
+            </tr>
+            <tr>
+                <td th:replace="~{components/cells :: ${body}}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <!--ENVELOPE-->
+    <table th:fragment="envelope" class="w-100 h-100">
+        <tbody>
+            <tr>
+                <td class="neck">
+                    <table th:replace="~{components/tables :: card-neck-side('neckL')}"></table>
+                </td>
+                <td colspan="4" class="neck neckM">&nbsp;</td>
+                <td class="neck">
+                    <table th:replace="~{components/tables :: card-neck-side('neckR')}"></table>
+                </td>
+            </tr>
+            <tr th:replace="~{components/rows :: row-of(6)}"></tr>
+            <tr th:replace="~{components/rows :: row-of(6)}"></tr>
+        </tbody>
+    </table>
+    <!--NECK LEFT/RIGHT (neckL/neckR)-->
+    <table th:fragment="card-neck-side(class)" class="w-100 h-100">
+        <tbody>
+            <tr>
+                <td th:class="${class}">
+                    &nbsp;
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

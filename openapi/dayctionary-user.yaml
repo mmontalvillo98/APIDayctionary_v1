@@ -1,0 +1,136 @@
+# Every Open API file needs this
+swagger: "2.0"
+# Document metadata
+info:
+  version: "2023-10-10"
+  title: Dayctionary-users
+  description: Api de los usuarios.
+# URL data
+host: localhost:8888
+schemes:
+  - http
+consumes:
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+
+paths:
+  /token/{userId}:
+    #http://localhost:8888/users/token/3sT035Un1D
+    get:
+      parameters:
+          - name: userId
+            in: path
+            required: true
+            type: string
+            description: identificador único del usuario.
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/user"
+        404:
+          description: Not found. Usuario no encontrado.
+      description: Recibe los datos de un usuario.
+  /users:
+    #http://localhost:8888/users
+    post:
+      parameters:
+          - name: user
+            in: body 
+            schema:
+              $ref: '#/definitions/user'
+      responses:
+        204:
+          description: Created
+          schema:
+            $ref: "#/definitions/user"
+        400:
+          description: Bad Request. Falta algún parametro o el email ya está usado.
+      description: Registra a un usuario en la aplicación.
+    put:
+      parameters:
+          - name: user
+            in: body 
+            schema:
+              $ref: '#/definitions/user'
+      responses:
+        204:
+          description: Updated
+          schema:
+            $ref: "#/definitions/user"
+        400:
+          description: Bad Request. El email ya está usado.
+        404:
+          description: Not found. Usuario no encontrado.
+      description: Actualiza los datos de un usuario en la aplicación.
+  /users/used/{mail}:
+    #http://localhost:8888/users/used/my.mail@hotmail.es
+    get:
+      parameters:
+          - name: mail
+            in: path
+            required: true
+            type: string
+            description: mail cuyo uso se quiere validar.
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: boolean
+      description: Valida si un email si existe un usuario con un email introducido.
+  /users/{userId}:
+    #http://localhost:8888/users/3sT035Un1D
+    delete:
+      parameters:
+          - name: userId
+            in: path
+            required: true
+            type: string
+            description: identificador único del usuario.
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: boolean
+        400:
+          description: Bad request. Las versión del objeto no es la actual.
+        404:
+          description: Not found. Usuario no encontrado.
+      description: Elimina un usuario.
+  /users/stopNotifications/{mail}:
+    #http://localhost:8888/users/stopNotifications/:mail
+    get:
+      parameters:
+          - name: mail
+            in: path
+            required: true
+            type: string
+            description: mail cuyo uso se quiere validar.
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: boolean
+        404:
+          description: Not found. Usuario con email no encontrado. 
+      description: Valida si un email si existe un usuario con un email introducido.
+definitions:
+  user:
+    properties:
+      id:
+        type: string
+        description: Identificador único del usuario.
+      mail:
+        type: string
+        description: Email del usuario.
+      password:
+        type: string
+        description: Contraseña del usuario.
+      notifications:
+        type: boolean
+        description: Indica si el usuario quiere notificaciones cuando se publique un nuevo juego.
+      version:
+        type: integer
+        description: Versión del objeto.
+        minimum: 0

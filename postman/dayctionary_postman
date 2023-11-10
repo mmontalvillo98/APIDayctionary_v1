@@ -1,0 +1,1027 @@
+{
+	"info": {
+		"_postman_id": "888f368d-6f2e-4bbe-b053-a8d2a0e459c4",
+		"name": "TFG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28727881"
+	},
+	"item": [
+		{
+			"name": "thirdParty",
+			"item": [
+				{
+					"name": "RandomWordApi",
+					"item": [
+						{
+							"name": "Languages",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://random-word-api.herokuapp.com/languages",
+									"protocol": "https",
+									"host": [
+										"random-word-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"languages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://random-word-api.herokuapp.com/all",
+									"protocol": "https",
+									"host": [
+										"random-word-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RandomWord",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://random-word-api.herokuapp.com/word",
+									"protocol": "https",
+									"host": [
+										"random-word-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"word"
+									],
+									"query": [
+										{
+											"key": "lang",
+											"value": "es",
+											"description": "language",
+											"disabled": true
+										},
+										{
+											"key": "number",
+											"value": "5",
+											"description": "number of words returned",
+											"disabled": true
+										},
+										{
+											"key": "length",
+											"value": "5",
+											"description": "number of letters of words returned",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DictionaryApi",
+					"item": [
+						{
+							"name": "word",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.dictionaryapi.dev/api/v2/entries/en/:word",
+									"protocol": "https",
+									"host": [
+										"api",
+										"dictionaryapi",
+										"dev"
+									],
+									"path": [
+										"api",
+										"v2",
+										"entries",
+										"en",
+										":word"
+									],
+									"variable": [
+										{
+											"key": "word",
+											"value": "light",
+											"description": "word to search on the dictionary"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Datamuse",
+					"item": [
+						{
+							"name": "Words by filter/s",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.datamuse.com/words?sp=c*&rel_rhy=closer&max=100",
+									"protocol": "https",
+									"host": [
+										"api",
+										"datamuse",
+										"com"
+									],
+									"path": [
+										"words"
+									],
+									"query": [
+										{
+											"key": "ml",
+											"value": "love",
+											"description": "Significado parecido a...",
+											"disabled": true
+										},
+										{
+											"key": "sl",
+											"value": "hurted",
+											"description": "Suena parecido a...",
+											"disabled": true
+										},
+										{
+											"key": "sp",
+											"value": "love",
+											"description": "Spelled similarly to...",
+											"disabled": true
+										},
+										{
+											"key": "sp",
+											"value": "c*",
+											"description": "Empieza por... (a*) Acaba por... (*a) Empieza por a, dos letras y acaba en a (a??a)"
+										},
+										{
+											"key": "lc",
+											"value": "word",
+											"description": "Suelen seguir en una frase a...",
+											"disabled": true
+										},
+										{
+											"key": "rel_rhy",
+											"value": "closer",
+											"description": "Rima con..."
+										},
+										{
+											"key": "rel_jjb",
+											"value": "word",
+											"description": "Adjetivos usados para describir...",
+											"disabled": true
+										},
+										{
+											"key": "rel_trg",
+											"value": "love",
+											"description": "Asociadas con...",
+											"disabled": true
+										},
+										{
+											"key": "sug",
+											"value": "wo",
+											"description": "Ayudas...",
+											"disabled": true
+										},
+										{
+											"key": "max",
+											"value": "100",
+											"description": "Numero de registros"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "dayctionary",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mail\": \"m.picoperez@gmail.com\",\r\n    \"password\": \"123\",\r\n    \"notifications\":false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8888/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"65103592528eec3c068f18d8\",\r\n    \"mail\": \"m.test@gmail.com\",\r\n    \"password\":\"123\",\r\n    \"notifications\": true,\r\n    \"version\": 4\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8888/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "usedMail",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/users/:mail",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"users",
+										":mail"
+									],
+									"variable": [
+										{
+											"key": "mail",
+											"value": "m.montecalvillo@gmail.com",
+											"description": "email que quieres saber si está utilizado"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/users/:id/:version",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"users",
+										":id",
+										":version"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "650c7ce3b9c31367e24d7b76",
+											"description": "id del usuario a borrar"
+										},
+										{
+											"key": "version",
+											"value": "1",
+											"description": "versión del usuario"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "stopNotifications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/users/stopNotifications/:mail",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"users",
+										"stopNotifications",
+										":mail"
+									],
+									"variable": [
+										{
+											"key": "mail",
+											"value": "m.montalvillo98@gmail.com",
+											"description": "email que quiere dejar de recibir notificaciones"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getByIdAndToken",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTEwMzU5MjUyOGVlYzNjMDY4ZjE4ZDgiLCJleHAiOjE2OTY1NjkzOTUsInJvbGVzIjoiW1VTRVJdIn0.vYk87F5QIQZkpkhQ5x5WkwclxylaeLWmPBzNDN9oa1UN0GzXWTsJ-JdUt2v5rEExLpIiq0T0ulhg-enUR3_vSg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/users/token/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"users",
+										"token",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65103592528eec3c068f18d8",
+											"description": "id del usuario del que se quiere recuperar la información"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "game",
+					"item": [
+						{
+							"name": "Date game",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTEwMjljYzVlYzAyOTIwNDAzYjZiZTYiLCJleHAiOjE2OTYwMDMzMjAsInJvbGVzIjoiW1VTRVIsIEFETUlOXSJ9.5-2cfYzoEWUFDghpqlX80zLLNESGIQ-BDICKHkaaDC8z3G--D8A9lPxCPvAuUJgc8XoeK6Wv5F_aeBJEzJTG-g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/games/:date",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"games",
+										":date"
+									],
+									"variable": [
+										{
+											"key": "date",
+											"value": "20230729"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Date phonetics",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTEwMjljYzVlYzAyOTIwNDAzYjZiZTYiLCJleHAiOjE2OTY1Njk3ODEsInJvbGVzIjoiW1VTRVIsIEFETUlOXSJ9.hudMJyj6tmJ-bXPTegeziIfLVoSmY66v7uObeyz0x7MsQv_E-HORVS6Z11P-Tb4TpmvMVgPLSHIVTsNuSrdbFA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/mini/phonetics/:date",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"mini",
+										"phonetics",
+										":date"
+									],
+									"variable": [
+										{
+											"key": "date",
+											"value": "20230904"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Date definitions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTEwMjljYzVlYzAyOTIwNDAzYjZiZTYiLCJleHAiOjE2OTY1Njk3ODEsInJvbGVzIjoiW1VTRVIsIEFETUlOXSJ9.hudMJyj6tmJ-bXPTegeziIfLVoSmY66v7uObeyz0x7MsQv_E-HORVS6Z11P-Tb4TpmvMVgPLSHIVTsNuSrdbFA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/mini/definitions/:date",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"mini",
+										"definitions",
+										":date"
+									],
+									"variable": [
+										{
+											"key": "date",
+											"value": "20230904"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Today phonetics",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTEwMjljYzVlYzAyOTIwNDAzYjZiZTYiLCJleHAiOjE2OTY1Njk3ODEsInJvbGVzIjoiW1VTRVIsIEFETUlOXSJ9.hudMJyj6tmJ-bXPTegeziIfLVoSmY66v7uObeyz0x7MsQv_E-HORVS6Z11P-Tb4TpmvMVgPLSHIVTsNuSrdbFA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/mini/phonetics",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"mini",
+										"phonetics"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Today difinitions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTEwMjljYzVlYzAyOTIwNDAzYjZiZTYiLCJleHAiOjE2OTY1Njk3ODEsInJvbGVzIjoiW1VTRVIsIEFETUlOXSJ9.hudMJyj6tmJ-bXPTegeziIfLVoSmY66v7uObeyz0x7MsQv_E-HORVS6Z11P-Tb4TpmvMVgPLSHIVTsNuSrdbFA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/mini/definitions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"mini",
+										"definitions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Date synonyms",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTEwMjljYzVlYzAyOTIwNDAzYjZiZTYiLCJleHAiOjE2OTY1Njk3ODEsInJvbGVzIjoiW1VTRVIsIEFETUlOXSJ9.hudMJyj6tmJ-bXPTegeziIfLVoSmY66v7uObeyz0x7MsQv_E-HORVS6Z11P-Tb4TpmvMVgPLSHIVTsNuSrdbFA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/mini/synonyms/:date",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"mini",
+										"synonyms",
+										":date"
+									],
+									"variable": [
+										{
+											"key": "date",
+											"value": "20230904"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Today synonyms",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTEwMjljYzVlYzAyOTIwNDAzYjZiZTYiLCJleHAiOjE2OTY1Njk3ODEsInJvbGVzIjoiW1VTRVIsIEFETUlOXSJ9.hudMJyj6tmJ-bXPTegeziIfLVoSmY66v7uObeyz0x7MsQv_E-HORVS6Z11P-Tb4TpmvMVgPLSHIVTsNuSrdbFA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/mini/synonyms",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"mini",
+										"synonyms"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Save",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTEwMjljYzVlYzAyOTIwNDAzYjZiZTYiLCJleHAiOjE2OTU1OTQzODYsInJvbGVzIjoiW1VTRVIsIEFETUlOXSJ9.kzKRygoDpJ1e_42DriE4wwzGbu525HKAXqFv_ecBhXoiQ9N3ZoBo-4orjaQx6LM1KhQJ8-tV0QqqVvRww_IqJw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8888/games",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"games"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "saveGame",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTBiNzJjMGJiOTI2NDExZTcwOGFmNTIiLCJleHAiOjE2OTY1NzAyNDIsInJvbGVzIjoiW1VTRVIsIEFETUlOXSJ9.4DJstKVr3sPXoFKgmO4THsq963l6SS7hdHkX3W_qMd9-0l6tgeRnalVToVFYc9T39bmwSNvLniurFvsHF1HYJA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"date\": \"19980701\",\r\n    \"simPhWord0\":\"word\",\r\n    \"simPhAudio0\":\"audio.mp3\",\r\n    \"simPhSyllables0\":1,\r\n    \"simPhWord1\":\"word\",\r\n    \"simPhAudio1\":\"audio.mp3\",\r\n    \"simPhSyllables1\":1,\r\n    \"simPhWord2\":\"word\",\r\n    \"simPhAudio2\":\"audio.mp3\",\r\n    \"simPhSyllables2\":1,\r\n    \"simPhWord3\":\"word\",\r\n    \"simPhAudio3\":\"audio.mp3\",\r\n    \"simPhSyllables3\":1,\r\n    \"simDfWord0\":\"word\",\r\n    \"simDfType0\":\"TYPE\",\r\n    \"simDfText0\":\"text\",\r\n    \"simDfWord1\":\"word\",\r\n    \"simDfType1\":\"TYPE\",\r\n    \"simDfText1\":\"text\",\r\n    \"simDfWord2\":\"word\",\r\n    \"simDfType2\":\"TYPE\",\r\n    \"simDfText2\":\"text\",\r\n    \"simDfWord3\":\"word\",\r\n    \"simDfType3\":\"TYPE\",\r\n    \"simDfText3\":\"text\",\r\n    \"simSyWord0\":\"synonym\",\r\n    \"simSyWord1\":\"similar1\",\r\n    \"simSyWord2\":\"similar2\",\r\n    \"simSyWord3\":\"similar3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8888/games",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"games"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "mail",
+					"item": [
+						{
+							"name": "sendVerifyCode",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/mails/verify/:mail",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"mails",
+										"verify",
+										":mail"
+									],
+									"variable": [
+										{
+											"key": "mail",
+											"value": "m.montalvillo98@gmail.com",
+											"description": "email a verificar"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "newPassword",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/mails/forgot/:mail",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"mails",
+										"forgot",
+										":mail"
+									],
+									"variable": [
+										{
+											"key": "mail",
+											"value": "m.montalvillo98@gmail.com",
+											"description": "email del usuario que quiere que le cambien la contraseña"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "answer",
+					"item": [
+						{
+							"name": "answerGame",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\":\"650b72c0bb926411e708af52\",\r\n    \"gameId\":\"64f46e62e046b127ba70eb2f\",\r\n    \"miniGame\":\"DEFINITION\",\r\n    \"word\":\"light\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8888/answers/answer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"answers",
+										"answer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAnswerByUserGame",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTEwMjljYzVlYzAyOTIwNDAzYjZiZTYiLCJleHAiOjE2OTU1OTc4OTMsInJvbGVzIjoiW1VTRVIsIEFETUlOXSJ9.HwRxpc-RKinCrr50zEp1l6x_XkqUBnQdLi85FPIQgSgn1q9TteHH0jeL8flBcEGuPGJiiG-wZUBpqNhM4JLCgg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8888/answers/answer/:userId/:gameId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"answers",
+										"answer",
+										":userId",
+										":gameId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "650b72c0bb926411e708af52"
+										},
+										{
+											"key": "gameId",
+											"value": "64f46e62e046b127ba70eb2f"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "adminToken",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mail\": \"m.admi@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8888/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "userToken",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mail\": \"m.test@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8888/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Word",
+					"item": [
+						{
+							"name": "TodayWord",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/words",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"words"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DateWord",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/words/:date",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"words",
+										":date"
+									],
+									"variable": [
+										{
+											"key": "date",
+											"value": "20230904"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.globals.set(\"protocol\", \"http\");",
+							"pm.globals.set(\"host\", \"localhost\");",
+							"pm.globals.set(\"port\", \"8888\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

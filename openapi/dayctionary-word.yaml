@@ -1,0 +1,56 @@
+# Every Open API file needs this
+swagger: "2.0"
+# Document metadata
+info:
+  version: "2023-10-10"
+  title: Dayctionary-words
+  description: Api de las palabras.
+# URL data
+host: localhost:8888
+schemes:
+  - http
+consumes:
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+
+paths:
+  /words:
+    #http://localhost:8888/words
+    get:
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/game"
+        404:
+          description: Not found. Juego no encontrado.
+      description: Recibe la palabra y el id del juego de hoy.
+  /words/{date}:
+    #http://localhost:8888/words/20231010
+    get:
+      parameters:
+          - name: date
+            in: path
+            required: true
+            type: string
+            description: Fecha del juego con formato YYYYMMDD.
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/game"
+        400:
+          description: Bad request. La fecha no tiene el formato indicado.
+        404:
+          description: Not found. Juego no encontrado.
+      description: Recibe la palabra y el id del juego del día indicado.
+definitions:
+  game:
+    properties:
+      id:
+        type: string
+        description: Identificador único del juego.
+      word:
+        type: string
+        description: Palabra del juego.

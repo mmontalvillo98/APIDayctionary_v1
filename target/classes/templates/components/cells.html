@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <!--MAIN HEADER-->
+    <td th:fragment="main-header">
+        <!-- <img class="logo center" src="./logo.png"> -->
+        <h1 class="logo center" th:text="${title}"></h1>
+        <hr>
+    </td>
+    <!--MAIN FOOTER-->
+    <td th:fragment="main-footer"><!-- ¿ make copyright variable ? -->
+        <p class="center">&copy; Mario Montalvillo Herrezuelo</p>
+    </td>
+    <!--CARD TITLE-->
+    <td th:fragment="card-title" class="title">
+        <h1 class="center" th:text="${action}"></h1>
+        <hr>
+    </td>
+    <!--CARD ACTIVATION CODE-->
+    <td th:fragment="card-activation-code">
+        Your activation code is:
+        <br />
+        <h3 th:text="${code}"></h3>
+    </td>
+    <!--CARD ACTIVATION CODE-->
+    <td th:fragment="card-new-password">
+        Your new password is:
+        <br />
+        <h3 th:text="${code}"></h3>
+    </td>
+    <!--CARD AVAILABLE WORD-->
+    <td th:fragment="card-available-word">
+        Hello, <span th:text="${mail}"></span>!
+        <br />
+        There is a new word available at <a href="http://localhost:4200/">page.com</a>
+        <br />
+        <a href="http://localhost:4200/">
+            <button>PLAY</button>
+        </a>
+        <br />
+        If you want to stop receiving this emails click
+            <a target="_blank">
+                    <!--th:href="'http://localhost:8888/stopNotifications/'+${mail}}">-->
+                here
+            </a>!
+    </td>
+</body>
+
+</html>
