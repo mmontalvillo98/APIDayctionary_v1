@@ -14,7 +14,7 @@
 	<name>myApi</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>20</java.version>
+		<java.version>17</java.version>
 		<org.projectlombok.version>1.18.28</org.projectlombok.version>
 		<com.googlecode.json-simple.version>1.1.1</com.googlecode.json-simple.version>
 		<org.mockito.version>2.21.0</org.mockito.version>
