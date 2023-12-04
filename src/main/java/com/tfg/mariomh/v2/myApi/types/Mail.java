@@ -2,9 +2,9 @@ package com.tfg.mariomh.v2.myApi.types;
 
 public enum Mail {
 
-    VERIFICATION("Verify account", "Verify MYPAGE account", "structures/verification-mail.html"),
-    PASSWORD("New MY_PAGE password", "Your password has been changed", "structures/new-password-mail.html"),
-    AVAILABLE("New game available", "New MYPAGE game available", "structures/available-mail.html");
+    VERIFICATION("Verify account", "Verify Dayctionary account", "structures/verification-mail.html"),
+    PASSWORD("New Dayctionary password", "Your password has been changed", "structures/new-password-mail.html"),
+    AVAILABLE("New game available", "New Dayctionary game available", "structures/available-mail.html");
 
     private String action;
     private String subject;
